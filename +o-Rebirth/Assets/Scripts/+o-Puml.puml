@@ -1,0 +1,42 @@
+@startuml
+hide empty members
+
+package Player <<Folder>>
+{
+    class Attraction<<M, yellow>>
+    {
+        -polarity : Enum
+        -attractionForce : float
+        -attractionRadius : float
+        -inAirSpeedMultiplier : float
+        -Attract()
+    }
+
+    class PlayerMovement<<M, yellow>>
+    {
+        -InputField : inputSystem
+        -speed : float
+        -jumpSpeed : float
+        -Move()
+        -Jump()
+    }
+}
+
+package Level <<Folder>>
+{
+    class LockMechanism <<M, yellow>>
+    {
+        -keysNeeded : int
+        -OnTriggerEnter(Key)
+    }
+    
+    class Key <<M, yellow>>
+    {
+        -attraction : Attraction
+    }
+}
+
+PlayerMovement <|-- Attraction
+LockMechanism o-- Key
+
+@enduml
