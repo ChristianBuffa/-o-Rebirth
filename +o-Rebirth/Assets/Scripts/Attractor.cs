@@ -33,16 +33,19 @@ public class Attractor : MonoBehaviour
     private void CheckSurroundings()
     {
         Attractor[] attractors = FindObjectsOfType<Attractor>();
-
+        
         foreach(Attractor attractedObj in attractors)
         {
-            if (attractedObj.polarity != this.polarity && hasAttraction)
+            if (attractedObj != this)
             {
-                Attract(attractedObj);
-            }
-            else if(attractedObj.polarity == this.polarity && hasAttraction)
-            {
-                Repel(attractedObj);
+                if (attractedObj.polarity != this.polarity && hasAttraction)
+                {
+                    Attract(attractedObj);
+                }
+                else if (attractedObj.polarity == this.polarity && hasAttraction)
+                {
+                    Repel(attractedObj);
+                }
             }
         }
     }
@@ -57,7 +60,7 @@ public class Attractor : MonoBehaviour
         //curveModifier = curve.Evaluate(distanceFromAttractor / attractionDistance);
         float forceMagnitude = G * (attractionForce * rbToAttract.mass) / distanceFromAttractor;
         
-        Vector3 force = direction.normalized * forceMagnitude;
+        Vector2 force = direction.normalized * forceMagnitude;
 
         if (distanceFromAttractor < attractionDistance)
         {
@@ -75,7 +78,7 @@ public class Attractor : MonoBehaviour
         //curveModifier = curve.Evaluate(distanceFromAttractor / attractionDistance);
         float forceMagnitude = G * (attractionForce * rbToRepel.mass) / distanceFromAttractor;
         
-        Vector3 force = -direction.normalized * forceMagnitude;
+        Vector2 force = -direction.normalized * forceMagnitude;
 
         if (distanceFromAttractor < attractionDistance)
         {
