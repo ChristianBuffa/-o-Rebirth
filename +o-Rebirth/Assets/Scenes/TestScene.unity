@@ -289,7 +289,7 @@ MonoBehaviour:
   attractionForce: 20
   attractionDistance: 5
   hasAttraction: 1
-  type: 0
+  polarity: 0
 --- !u!1 &225875800
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
   attractionForce: 20
   attractionDistance: 5
   hasAttraction: 1
-  type: 1
+  polarity: 0
 --- !u!1 &1517925494
 GameObject:
   m_ObjectHideFlags: 0

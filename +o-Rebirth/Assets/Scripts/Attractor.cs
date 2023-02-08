@@ -40,6 +40,10 @@ public class Attractor : MonoBehaviour
             {
                 Attract(attractedObj);
             }
+            else if(attractedObj.polarity == this.polarity && hasAttraction)
+            {
+                Repel(attractedObj);
+            }
         }
     }
 
@@ -58,6 +62,24 @@ public class Attractor : MonoBehaviour
         if (distanceFromAttractor < attractionDistance)
         {
             rbToAttract.AddForce(force);    
+        }
+    }
+
+    private void Repel(Attractor objToRepel)
+    {
+        Rigidbody2D rbToRepel = objToRepel.rb;
+
+        Vector2 direction = rb.position - rbToRepel.position; 
+        distanceFromAttractor = direction.magnitude;
+
+        //curveModifier = curve.Evaluate(distanceFromAttractor / attractionDistance);
+        float forceMagnitude = G * (attractionForce * rbToRepel.mass) / distanceFromAttractor;
+        
+        Vector3 force = -direction.normalized * forceMagnitude;
+
+        if (distanceFromAttractor < attractionDistance)
+        {
+            rbToRepel.AddForce(force);    
         }
     }
 
