@@ -1,16 +1,24 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float speed;
     [SerializeField] private float jumpingPower;
-    
+
+    private Attractor attractor;
     private float horizontal;
+    bool magneticFieldIsActive = false;
+
+    private void Awake()
+    {
+        attractor = GetComponent<Attractor>();
+    }
 
     private void Update()
     {
@@ -20,6 +28,20 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    public void MagneticFieldActivation(InputAction.CallbackContext context)
+    {
+        if (context.performed && !magneticFieldIsActive)
+        {
+            attractor.isAttracting = true;
+            magneticFieldIsActive = true;
+        }
+        else if (context.performed && magneticFieldIsActive)
+        {
+            attractor.isAttracting = false;
+            magneticFieldIsActive = false;
+        }
     }
 
     private void ManageMovement()

@@ -262,6 +262,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: a7b4ff74-91b3-482c-a16a-9239ab824a85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Player/MagneticFieldActivation[/Keyboard/e,/XInputControllerWindows/leftTrigger]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 192551968}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MagneticFieldActivation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235943897951244999, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
 --- !u!4 &192551965 stripped
@@ -290,6 +330,17 @@ MonoBehaviour:
   attractionDistance: 5
   hasAttraction: 1
   polarity: 0
+--- !u!114 &192551968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2235943897951244995, guid: 78761c50872e95b47aae7cb56f3f953c, type: 3}
+  m_PrefabInstance: {fileID: 192551964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192551966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6299b62516292b749b2db217f022503a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &225875800
 GameObject:
   m_ObjectHideFlags: 0

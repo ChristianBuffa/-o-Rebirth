@@ -1,12 +1,12 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Attractor : MonoBehaviour
 {
     [SerializeField] private float attractionForce;
     [SerializeField] private float attractionDistance;
     [SerializeField] private bool hasAttraction;
+    [HideInInspector] public bool isAttracting;
+    
     public enum attractorPolarity
     {
         POSITIVE,
@@ -23,11 +23,15 @@ public class Attractor : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        isAttracting = false;
     }
 
     private void FixedUpdate()
     {
-        CheckSurroundings();
+        if (isAttracting)
+        {
+            CheckSurroundings();
+        }
     }
 
     private void CheckSurroundings()
