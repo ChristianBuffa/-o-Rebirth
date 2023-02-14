@@ -21,7 +21,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -71,22 +71,22 @@
                 },
                 {
                     "name": "",
-                    "id": "ff143741-e613-433c-8305-98f2389f2d6f",
-                    "path": "<Keyboard>/w",
+                    "id": "ae6414f7-c446-44dc-9298-bc4ec72a348d",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "Gamepad",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ae6414f7-c446-44dc-9298-bc4ec72a348d",
-                    "path": "<Gamepad>/leftStick/up",
+                    "id": "532b881e-62be-474c-b616-dd9c06fc3663",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
